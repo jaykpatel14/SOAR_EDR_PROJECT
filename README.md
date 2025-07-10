@@ -13,7 +13,7 @@ This project demonstrates an end-to-end Security Orchestration, Automation, and 
 ## 🔢 Project Goals
 
 * Understand how SOAR and EDR platforms work together.
-* Automate brute force attack detection and response workflows.
+* Automate Mimikatz attack detection and response workflows.
 * Showcase practical cybersecurity automation skills.
 
 ---
