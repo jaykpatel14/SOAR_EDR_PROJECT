@@ -1,0 +1,34 @@
+**Detect**
+  events:
+  - NEW_PROCESS
+  - EXISTING_PROCESS
+op: and
+rules:
+  - op: is windows
+  - op: or
+    rules:
+      - case sensitive: false
+        op: ends with
+        path: event/FILE_PATH
+        value: mimikatz.exe
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: mimikatz
+      - case sensitive: false
+        op: is
+        path: event/HASH
+        value: 92804faaab2175dc501d73e814663058c78c0a042675a8937266357bcfb96c50
+
+**Respond**
+- action: report
+  metadata:
+    author: BYSECIOT
+    description: TEST - Detects Mimikatz Usage
+    falsepositives:
+      - ToTheMoon
+    level: high
+    tags:
+      - attack.credential_access
+  name: BYSECIOT - HackTool - Mimikatz
+
